@@ -1,3 +1,4 @@
+import { signInWithEmailAndPassword } from 'firebase/auth';
 import React, { useRef, useState } from 'react';
 import { auth } from '../utils/firebase.config';
 
@@ -10,7 +11,8 @@ const Login = () => {
 		e.preventDefault();
 
 		try {
-			const user = await auth.signInWithEmailAndPassword(
+			const user = await signInWithEmailAndPassword(
+				auth,
 				loginEmail.current.value,
 				loginPassword.current.value
 			);
@@ -19,8 +21,6 @@ const Login = () => {
 			console.log(error.message);
 			setError(true);
 		}
-
-		console.log(loginEmail.current.value, loginPassword.current.value);
 	};
 
 	return (
