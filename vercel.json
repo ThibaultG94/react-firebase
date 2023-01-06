@@ -1,0 +1,13 @@
+{
+	"version": 2,
+	"builds": [
+		{ "src": "package.json", "use": "@vercel/next-npm" },
+		{ "src": "next.config.js", "use": "@vercel/next-config" },
+		{ "src": "next.config.js", "use": "@vercel/next-optimized-images" }
+	],
+	"env": {
+		"FIREBASE_API_KEY": "@firebase-api-key",
+		"FIREBASE_AUTH_DOMAIN": "@firebase-auth-domain",
+		"FIREBASE_DATABASE_URL": "@firebase-database-url"
+	}
+}
